@@ -1,0 +1,21 @@
+<apex:page standardController="Service_Provider__c" recordSetVar="Service_Provider" >
+    <apex:form >
+        <apex:pageblock title="Service_Provider" >
+            <apex:pageBlockTable value="{!Service_Provider}" var="a">
+                <apex:column headerValue="Account" value="{!a.Account_ID__c}"/>
+                <apex:column headerValue="UserName" value="{!a.Name}"/>
+                <apex:column headerValue="Created By" value="{!a.CreatedBy.Name}"/>
+                <apex:column headerValue="Modified Date" value="{!a.LastModifiedBy.Name}"/>
+                <apex:column >
+                    <center>
+                    <apex:facet name="header">Active</apex:facet>
+                    </center>
+                    <center>
+                        <apex:inputCheckbox value="{!a.IsActive__c}" label="checkBox">
+                        </apex:inputCheckbox>
+                    </center>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>
